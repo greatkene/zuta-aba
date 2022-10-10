@@ -1,10 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import hero from './Hero'
+import hero from '../assets/hero.png'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return (
+    <Wrapper className='section-center'>
+      <article className='content'>
+        <h1>Best made in <br /> Aba Product </h1>
+        <p>
+        Get your Quality Products directly from Trusted and Certified 
+        manufacturing companies in the Industrial city of Aba, 
+        Get it delivered to you anywhere in Nigeria.
+        </p>
+        <Link to="/products" className='btn hero-btn'>Show Now</Link>
+      </article>
+      <article className='img-container'>
+        <img src={hero} alt="hero" className='main-img' />
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -12,7 +27,16 @@ const Wrapper = styled.section`
   display: grid;
   place-items: center;
   .img-container {
-    display: none;
+    display: block;
+    position: relative
+  }
+  .main-img {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    border-radius: var(--radius);
+    display: block;
+    object-fit: cover;
   }
 
   p {
@@ -42,30 +66,14 @@ const Wrapper = styled.section`
     }
     .main-img {
       width: 100%;
-      height: 550px;
+      height: 400px;
       position: relative;
       border-radius: var(--radius);
       display: block;
       object-fit: cover;
     }
-    .accent-img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 250px;
-      transform: translateX(-50%);
-      border-radius: var(--radius);
-    }
-    .img-container::before {
-      content: '';
-      position: absolute;
-      width: 10%;
-      height: 80%;
-      background: var(--clr-primary-9);
-      bottom: 0%;
-      left: -8%;
-      border-radius: var(--radius);
-    }
+  
+   
   }
 `
 
