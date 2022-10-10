@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 import { Home, About, Error, Auth,  Cart, Products, Checkout, SingleProduct } from './pages'
 
-
-
 function App() {
   return (
     <Router>
