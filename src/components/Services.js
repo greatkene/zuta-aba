@@ -3,16 +3,39 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return (
+    <Wrapper>
+      <div className='section-center'>
+        <article className='header'>
+          <h3>Custom Made <br />
+            From Aba For You
+          </h3>
+          <p>
+            Aba is known for imitating foreign products, such as electronics 
+            and designer clothing and shoe labels. It houses some of the 
+            biggest and best markets in Nigeria.
+          </p>
+        </article>
+        <div className='services-center'>
+          {services.map((service) => {
+            const {id, icon, title, text} = service;
+            return (
+              <article key={id} className="service">
+                <span className='icon'>{icon}</span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            )
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
-  h3,
-  h4 {
-    color: var(--clr-primary-1);
-  }
-  padding: 5rem 0;
-
+  padding-bottom: 8rem;
+  padding-top: 2rem;
   background: var(--clr-primary-10);
 
   .header h3 {
@@ -21,7 +44,6 @@ const Wrapper = styled.section`
   p {
     margin-bottom: 0;
     line-height: 1.8;
-    color: var(--clr-primary-3);
   }
   .services-center {
     margin-top: 4rem;
@@ -33,9 +55,6 @@ const Wrapper = styled.section`
     text-align: center;
     padding: 2.5rem 2rem;
     border-radius: var(--radius);
-    p {
-      color: var(--clr-primary-2);
-    }
   }
   span {
     width: 4rem;
@@ -63,7 +82,7 @@ const Wrapper = styled.section`
     }
   }
   @media (min-width: 1280px) {
-    padding: 0;
+   
     .section-center {
       transform: translateY(5rem);
     }
