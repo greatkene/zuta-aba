@@ -1,11 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import discountImage from "../assets/discount.jpg"
 
 const Contact = () => {
-  return <h4>contact section</h4>
+  return (
+    <Wrapper className='section'>
+      <div className='section-center'>
+        <h3>
+          Join our newsletter to get <br /> SALES update
+        </h3>
+        <div className='content'>
+          <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. 
+          Perferendis corrupti reiciendis nesciunt rerum velit.
+          </p>
+          <form className='contact-form'>
+            <input type="email" className='form-input' placeholder='enter email' />
+            <button type='submit' className='submit-btn'>Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+    </Wrapper>
+  )
 }
 const Wrapper = styled.section`
-  padding: 5rem 0;
+  padding-bottom: 4rem;
   h3 {
     text-transform: none;
   }
@@ -65,7 +85,7 @@ const Wrapper = styled.section`
     }
   }
   @media (min-width: 1280px) {
-    padding: 15rem 0;
+    padding: 5rem 0;
   }
 `
 
