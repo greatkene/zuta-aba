@@ -8,9 +8,33 @@ import minus from "../assets/icon-minus.svg"
 import plus from "../assets/icon-plus.svg"
 import cart from "../assets/icon-cart-white.svg"
 
-const AddToCart = () => {
+const AddToCart = ({product}) => {
+  const {id, stock, colors} = product
+  const [mainColor, setMainColor] = useState(colors[0])
   return (
    <Wrapper>
+     <div className='colors'>
+      <span>colors: </span>
+      <div>
+        {
+          colors.map((color, index) => {
+            return (
+              <button 
+                key={index} 
+                style={{background: color}} 
+                className={`${mainColor === color ? 
+                  'color-btn active' : 
+                  "color-btn" 
+                }`}
+                onClick={() => setMainColor(color)}
+              > 
+                {mainColor === color ? <FaCheck /> : null}
+              </button>
+            )
+          })
+        }
+      </div>
+     </div>
       <Buttons>
       <div className='quantity'> 
         <div className='dec'>
