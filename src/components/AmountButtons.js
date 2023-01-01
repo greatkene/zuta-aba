@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaPlus, FaMinus } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 import minus from "../assets/icon-minus.svg"
 import plus from "../assets/icon-plus.svg"
@@ -19,9 +19,9 @@ const AmountButtons = ({increase, decrease, amount, addToCart}) => {
       </div>
     </div>
     <div className='add-to-cart'>
-      <button onClick={addToCart}>
+      <Link to="/cart" onClick={addToCart}>
         <img src={cart} alt={cart} /> Add to cart
-      </button>
+      </Link>
     </div>
   </Buttons>
   )
@@ -74,7 +74,7 @@ const Buttons = styled.div`
     }
   }
   .add-to-cart {
-    button {
+    a {
       height: 55px;
       width: 250px;
       background-color: hsl(26, 100%, 55%);
@@ -103,7 +103,7 @@ const Buttons = styled.div`
     }
     .add-to-cart {
       width: 100%;
-      button {
+      a {
         width: 100%;
       }
     }
