@@ -6,7 +6,7 @@ import minus from "../assets/icon-minus.svg"
 import plus from "../assets/icon-plus.svg"
 import cart from "../assets/icon-cart-white.svg"
 
-const AmountButtons = ({increase, decrease, amount}) => {
+const AmountButtons = ({increase, decrease, amount, addToCart}) => {
   return (
     <Buttons>
     <div className='quantity'> 
@@ -19,7 +19,7 @@ const AmountButtons = ({increase, decrease, amount}) => {
       </div>
     </div>
     <div className='add-to-cart'>
-      <button>
+      <button onClick={addToCart}>
         <img src={cart} alt={cart} /> Add to cart
       </button>
     </div>
