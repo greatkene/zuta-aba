@@ -17,7 +17,6 @@ const getLocalStorage = () => {
   }
 }
 
-
 const initialState = {
   cart: getLocalStorage(),
   total_items:0,
@@ -37,7 +36,7 @@ export const CartProvider = ({ children }) => {
 
   // remove item
   const removeItem = (id) => {
-
+    dispatch({type: REMOVE_CART_ITEM, payload: id})
   }
 
   // toggle amount
@@ -47,7 +46,7 @@ export const CartProvider = ({ children }) => {
 
   // clear cart
   const clearCart = () => {
-
+    dispatch({type: CLEAR_CART})
   }
 
   useEffect(() => {
